@@ -6,11 +6,11 @@ $Clients = RecupClients();
 $NomClient = $_POST['QNom'];
 foreach ($Plats as $NomDuPlat => $Taille) {
 	foreach ($Taille as $Format => $Prix) {
-		$Clients[$NomClient][$NomDuPlat][$Format] = $_POST("Q" . $NomDuPlat . $Format);
+		$Clients[$NomClient][$NomDuPlat][$Format] = $_POST["Q" . $NomDuPlat . $Format];
 	}
 }
 UploaderClient($Clients);
-?>
+	?>
 
 <!DOCTYPE html>
 <html>
