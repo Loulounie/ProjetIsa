@@ -1,0 +1,4 @@
+hachis parmentier;Familial:10;Moyen:5
+Patates;Normal:12
+pate chinois;Famillial:50;Moyen:20;Unique:10
+Fruits;Salade:15;morceaux:15
