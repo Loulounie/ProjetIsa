@@ -10,7 +10,7 @@ foreach ($Plats as $NomDuPlat => $Taille) {
 	}
 }
 UploaderClient($Clients);
-	?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -22,8 +22,8 @@ UploaderClient($Clients);
 <ul>
 <?php
 	foreach ($Clients[$NomClient] as $NomDuPlat => $Taille) {
-		foreach ($Taille as $Format => $Quantité) {
-				echo '<li>' . $Quantité . $NomDuPlat . $Format . '</li>';
+		foreach ($Taille as $Format => $Quantite) {
+				echo '<li>' . $Quantite . $NomDuPlat . $Format . '</li>';
 		}
 	}
 ?>
