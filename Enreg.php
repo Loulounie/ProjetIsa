@@ -1,12 +1,12 @@
 <?php
-include "BaseDonnee.php"
+include "BaseDonnee.php";
 
 $Plats = RecupDonnees(0);
 $Clients = RecupClients();
-$NomClient = $_POST['QNom'];
+$NomClient = $_GET['QNom'];
 foreach ($Plats as $NomDuPlat => $Taille) {
 	foreach ($Taille as $Format => $Prix) {
-		$Clients[$NomClient][$NomDuPlat][$Format] = $_POST["Q" . $NomDuPlat . $Format];
+		$Clients[$NomClient][$NomDuPlat][$Format] = $_GET["Q" . $NomDuPlat . $Format];
 	}
 }
 UploaderClient($Clients);
@@ -18,6 +18,15 @@ UploaderClient($Clients);
 	<title></title>
 </head>
 <body>
-<p>Merci de votre inscription!</p>
+<p>Vous avez bien commandé :</p>
+<ul>
+<?php
+	foreach ($Clients[$NomClient] as $NomDuPlat => $Taille) {
+		foreach ($Taille as $Format => $Quantité) {
+				echo '<li>' . $Quantité . $NomDuPlat . $Format . '</li>';
+		}
+	}
+?>
+</ul>
 </body>
 </html>

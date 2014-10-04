@@ -60,12 +60,12 @@
 			$Valeur = explode(";", $Ligne);
 			$NomClient = $Valeur[0];
 			unset($Valeur[0]);
-			$i = 0;
+			$i = 1;
 			foreach ($Plats as $NomDuPlat => $Taille ) {
 				$Formats = explode( ":", $Valeur[i]);
 				$j = 0; 
 				foreach ($Taille as $Format => $Prix) {
-					$Client[$NomClient][$NomDuPlat][$Format] = $Formats[$j];
+					$Clients[$NomClient][$NomDuPlat][$Format] = $Formats[$j];
 					$j++;
 				}
 				$i++;
@@ -78,7 +78,7 @@
 	{
 		$F = fopen("DonneesClientsTemp.txt", "w+");
 		foreach ($Clients as $NomClient => $InfClient) {
-			fputs($F, $NomClient);
+			fputs($F, $NomClient);		
 			foreach ($InfClient as $NomDuPlat => $Taille) {
 				fputs($F, ";" );
 				foreach ($Taille as $Format => $Quantite) {
